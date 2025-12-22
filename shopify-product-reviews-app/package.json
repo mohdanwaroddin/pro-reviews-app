@@ -1,0 +1,17 @@
+{
+  "name": "shopify-product-reviews-app",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@shopify/shopify-api": "^11.14.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "mongoose": "^8.20.3",
+    "multer": "^2.0.2"
+  }
+}

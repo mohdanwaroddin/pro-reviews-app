@@ -1,0 +1,117 @@
+{{ 'reviews.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="product-reviews-{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  class="reviews-wrapper"
+>
+  <h3 class="reviews-heading">
+    {{ section.settings.heading }}
+  </h3>
+
+  <!-- Reviews List -->
+  <div class="reviews-container">
+    Loading reviews...
+  </div>
+
+  <!-- Review Form -->
+<form class="review-form" onsubmit="return false;">
+  <input type="hidden" name="productId" value="{{ product.id }}">
+
+  <input type="text" name="name" placeholder="Your name" required>
+
+  <select name="rating" required>
+    <option value="">Rating</option>
+    <option value="5">★★★★★</option>
+    <option value="4">★★★★</option>
+    <option value="3">★★★</option>
+    <option value="2">★★</option>
+    <option value="1">★</option>
+  </select>
+
+  <textarea name="text" placeholder="Your review" required></textarea>
+
+  <button type="button" class="review-submit">
+    Submit Review
+  </button>
+</form>
+
+<p class="review-msg" style="display:none;">
+  ✅ Thank you! Your review has been submitted for approval.
+</p>
+
+
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const root = document.getElementById("product-reviews-{{ section.id }}");
+  if (!root) return;
+
+  const form = root.querySelector(".review-form");
+  const button = root.querySelector(".review-submit");
+  const msg = root.querySelector(".review-msg");
+
+  button.addEventListener("click", function () {
+    const formData = new FormData(form);
+
+    fetch("/apps/reviews-proxy/reviews", {
+      method: "POST",
+      body: formData
+    })
+    .then(res => {
+      if (!res.ok) throw new Error();
+      form.reset();                 // ✅ reset form
+      msg.style.display = "block";  // ✅ show message
+      setTimeout(() => msg.style.display = "none", 4000);
+    })
+    .catch(() => {
+      alert("Failed to submit review. Please try again.");
+    });
+  });
+});
+
+
+
+  // -------- AJAX FORM SUBMIT (NO REDIRECT) --------
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/apps/reviews-proxy/reviews", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      form.reset();
+      msg.style.display = "block";
+
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 4000);
+
+    } catch (err) {
+      alert("Failed to submit review. Try again.");
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer Reviews"
+    }
+  ]
+}
+{% endschema %}

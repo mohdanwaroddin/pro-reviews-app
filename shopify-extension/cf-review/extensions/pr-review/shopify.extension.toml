@@ -1,0 +1,7 @@
+name = "Pr-Review"
+type = "theme"
+uid = "a1e22af6-32a4-8dd1-8ca9-609ac058524861327d87"
+[[blocks]]
+name = "Product Reviews"
+target = "section"
+file = "blocks/reviews.liquid"

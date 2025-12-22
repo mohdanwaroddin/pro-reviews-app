@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  background-color: #008060;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+
+
+hr {
+  margin: 30px 0;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: #fff;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+}
+
+.badge.pending {
+  background: orange;
+}
+
+.badge.approved {
+  background: green;
+}
+
+.badge.rejected {
+  background: red;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star {
+  color: gold;
+  font-size: 16px;
+}
+
+.btn {
+  width: auto;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.btn-approve {
+  background-color: #28a745;
+}
+
+.btn-reject {
+  background-color: #dc3545;
+  margin-left: 8px;
+}
+
+.btn-approve:hover {
+  background-color: #006e52;
+}
+
+.btn-reject:hover {
+  background-color: #f63319;
+}
+
+
+.btn-sbt {
+  background-color: #28a745;
+}
+
+.btn-sbt:hover {
+  background-color: #56de20;
+}
+
+
+/* Page background */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f7f8fc, #eef1f7);
+  padding: 40px 20px;
+}
+
+/* Centered content box */
+.content {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.form-card {
+  margin-bottom: 30px;
+}
+
+.form-card h2 {
+  margin-bottom: 15px;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+
+/* Admin page layout */
+.admin-page {
+  min-height: 100vh;
+  background: #f4f6f8;
+  padding: 40px 20px;
+}
+
+.admin-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.admin-title {
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Button alignment */
+.admin-actions {
+  margin-top: 10px;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.page-number {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.review-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.review-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.review-img.small {
+  width: 60px;
+  height: 60px;
+}
+
+.admin-images {
+  margin-top: 8px;
+}
+
+/* Admin card layout */
+/* Admin card fixed layout */
+.admin-card {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  align-items: flex-start;
+}
+
+
+/* Left content */
+.admin-card-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+
+  min-height: 200px;
+  /* 🔥 IMPORTANT: gives space to push footer */
+}
+
+/* Image section fixed */
+.admin-card-right {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-review-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Review text container */
+.review-text {
+  margin: 10px 0;
+  color: #444;
+  line-height: 1.5;
+
+  /* 🔥 THIS FIXES SINGLE-LINE ISSUE */
+  white-space: normal;
+  word-break: break-word;
+
+  /* collapsed */
+  max-height: 4.5em;
+  overflow: hidden;
+}
+
+/* Expanded: fully readable inside card */
+.review-text.expanded {
+  max-height: 180px;
+  /* enough to read comfortably */
+  overflow-y: auto;
+  /* THIS enables scrolling */
+  padding-right: 6px;
+}
+
+/* Visible scrollbar */
+.review-text.expanded::-webkit-scrollbar {
+  width: 6px;
+}
+
+.review-text.expanded::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.read-more-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+  justify-items: end;
+  align-content: flex-end;
+}
+
+
+
+/* Read more button */
+.read-more {
+  background: none;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+  text-align: right;
+
+}
+
+/* Make left section a vertical layout */
+
+
+/* Push date to bottom */
+.review-footer {
+  margin-top: auto;
+  /* pushes to bottom */
+  font-size: 14px;
+  /* readable */
+  color: #666;
+  padding-top: 8px;
+}
