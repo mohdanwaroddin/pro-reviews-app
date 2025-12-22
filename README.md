@@ -8,6 +8,12 @@ The app allows customers to submit reviews for Shopify products, enables admin m
 <br>
 
 <a href="README.md#-features">Features</a>
+<a href="README.md#-project-structure">Project Structure</a>
+<a href="README.md#-assumptions">Assumptions</a>
+<a href="README.md#-possible-enhancements">Enhancements</a>
+
+
+
 ## ✨ Features<br>
 📝 Submit product reviews (with ratings & images)<br>
 🔐 Admin moderation (Approve / Reject)<br>
