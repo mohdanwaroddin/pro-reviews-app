@@ -5,7 +5,9 @@
 
 A full-stack Product Reviews application built using Node.js, MongoDB, React.js, and Shopify Theme App Extension.
 The app allows customers to submit reviews for Shopify products, enables admin moderation, and displays approved reviews directly on the Shopify product page.
+<br>
 
+<a href="Features">Features</a>
 ## ✨ Features<br>
 📝 Submit product reviews (with ratings & images)<br>
 🔐 Admin moderation (Approve / Reject)<br>
