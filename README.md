@@ -1,10 +1,12 @@
-# Reviews-App
-🛍️ Shopify Product Reviews App
+<hr>
+<h1>Reviews-App</h1>
+<hr>
+<h3>🛍️ Shopify Product Reviews App</h3>
 
 A full-stack Product Reviews application built using Node.js, MongoDB, React.js, and Shopify Theme App Extension.
 The app allows customers to submit reviews for Shopify products, enables admin moderation, and displays approved reviews directly on the Shopify product page.
 
-✨ Features<br>
+## ✨ Features<br>
 📝 Submit product reviews (with ratings & images)<br>
 🔐 Admin moderation (Approve / Reject)<br>
 🗄️ MongoDB-based persistent storage<br>
@@ -14,7 +16,7 @@ The app allows customers to submit reviews for Shopify products, enables admin m
 🖼️ Image upload support<br>
 🎨 Clean & responsive UI<br>
 
-🏗️ Tech Stack<br>
+## 🏗️ Tech Stack<br>
 Layer	Technology<br>
 Backend	Node.js, Express.js<br>
 Database	MongoDB Atlas<br>
@@ -23,7 +25,7 @@ File Upload	Multer<br>
 Shopify	Shopify CLI, Theme App Extension<br>
 Tunneling	ngrok
 
-📂 Project Structure<br>
+## 📂 Project Structure<br>
 project-root/<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── backend/<br>
@@ -40,7 +42,7 @@ project-root/<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── extensions/<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── product-reviews/<br>
 
-⚙️ Setup Instructions<br>
+## ⚙️ Setup Instructions<br>
 1️⃣ Prerequisites<br>
 Make sure you have:<br>
 Node.js v20.x (LTS)<br>
@@ -108,7 +110,7 @@ App installs automatically on dev store<br>
 <br>Select Apps → Product Reviews
 <br>Save theme
 
-🔁 How the Product ID Mapping Works
+## 🔁 How the Product ID Mapping Works
 <br>Shopify provides {{ product.id }} in Liquid
 <br>The same ID is:
 <br>Sent during review submission
@@ -116,27 +118,27 @@ App installs automatically on dev store<br>
 <br>Used to fetch reviews for display
 <br>✅ This ensures product-specific reviews.
 
-🧠 Assumptions
+## 🧠 Assumptions
 <br>Shopify store is a development store
 <br>Backend is exposed publicly via ngrok
 <br>Reviews are displayed only after admin approval
 <br>Product ID is the single source of truth
 <br>Images are stored locally (not cloud-hosted)
 
-⚠️ Limitations<br>
+## ⚠️ Limitations<br>
 No authentication for customers (open review submission)<br>
 Images are stored locally (not Cloudinary/S3)<br>
 ngrok URL changes require updating backend URL<br>
 Theme extension uses vanilla JS, not React<br>
 No spam detection or CAPTCHA implemented<br>
 
-🚀 Possible Enhancements<br>
+## 🚀 Possible Enhancements<br>
 Cloud-based image storage<br>
 <space>Review submission authentication<br>
 Star rating summary on product title<br>
 SEO-friendly structured data (JSON-LD)<br>
 Caching reviews for performance<br>
-
+<br><hr><hr><br>
 👨‍💻 Author
 Mohd Anwaroddin<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fullstack Developer
