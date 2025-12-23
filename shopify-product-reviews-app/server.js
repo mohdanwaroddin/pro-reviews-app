@@ -9,6 +9,7 @@ import { shopifyApi, LATEST_API_VERSION } from '@shopify/shopify-api';
 
 dotenv.config();
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 /* -------------------- MIDDLEWARE -------------------- */
 //const cors = require("cors");
@@ -259,4 +260,8 @@ app.get("/auth/callback", async (req, res) => {
 app.use("/uploads", express.static("uploads"));
 
 /* -------------------- SERVER -------------------- */
-app.listen(3000, () => console.log('🚀 Server running on port 3000'));
+//app.listen(3000, () => console.log('🚀 Server running on port 3000'));
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
